@@ -17,10 +17,10 @@ export const game = () => {
     const userAnswer = readlineSync.question(`Question: ${questions[i]}\nYour answer: `);
     if (userAnswer !== rightAnswers[i]) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswers[i]}.\nLet's try again, ${userName}!`);
-      return NaN;
+      return null;
     }
     console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
-  return NaN;
+  return null;
 };
