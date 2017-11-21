@@ -35,5 +35,5 @@
   "dependencies": {
     "readline-sync": "^1.4.7"
   },
-  "description": ""
+  "description": "Brain Games project by Hexlet"
 }
