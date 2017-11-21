@@ -12,4 +12,5 @@ publish:
 
 lint:
 
-	npm run eslint
+	npm run eslint index.js
+	npm run eslint brain-games.js
