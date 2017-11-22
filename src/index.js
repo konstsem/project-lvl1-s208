@@ -1,20 +1,17 @@
 import readlineSync from 'readline-sync';
-import { pairs, gameRounds, text } from './games/even';
-
-// welcome, additionalText, getUserName;
-export const welcome = () => console.log('Welcome to the Brain Games!');
-export const empty = () => console.log('');
-export const addText = () => console.log(text);
 
 let userName = '';
+export const gameRounds = 3;
 
-export const greeting = () => {
+// welcome, additionalText, getUserName;
+export const welcome = (text) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(text);
   userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 };
 
-export const game = () => {
-  // console.log(pairs);
+export const main = (pairs) => {
   for (let i = 0; i !== gameRounds; i += 1) {
     const userAnswer = readlineSync.question(`Question: ${pairs[i].question}\nYour answer: `);
     if (userAnswer !== pairs[i].answer) {

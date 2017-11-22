@@ -1,9 +1,12 @@
-export const text = 'Answer "yes" if number even otherwise answer "no".\n';
+import { welcome, gameRounds, main } from '..';
 
-export const gameRounds = 3;
+const text = 'Answer "yes" if number even otherwise answer "no".\n';
 
-export const pairs = [];
+export const greeting = () => welcome(text);
 
+const pairs = [];
+
+// constructor for pairs
 const consPairs = () => {
   for (let i = 0; i !== gameRounds; i += 1) {
     const result = {};
@@ -13,4 +16,6 @@ const consPairs = () => {
   }
 };
 
-consPairs();
+consPairs(); // make pairs of questions and answers
+
+export const game = () => main(pairs);
