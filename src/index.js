@@ -1,37 +1,27 @@
 import readlineSync from 'readline-sync';
+import { pairs, gameRounds, text } from './games/even';
 
-const gameRounds = 3;
-/*
-const questions = [15, 6, 7];
-const rightAnswers = ['no', 'yes', 'no'];
-*/
+// welcome, additionalText, getUserName;
+export const welcome = () => console.log('Welcome to the Brain Games!');
+export const empty = () => console.log('');
+export const addText = () => console.log(text);
 
-const pairs = [
-  {
-    question: 15,
-    answer: 'no',
-  },
-  {
-    question: 6,
-    answer: 'yes',
-  },
-  {
-    question: 7,
-    answer: 'no',
-  },
-];
+let userName = '';
 
-export const greeting = () => readlineSync.question('May I have your name? ');
+export const greeting = () => {
+  userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!\n`);
+};
 
-export const game = (userName) => {
+export const game = () => {
+  // console.log(pairs);
   for (let i = 0; i !== gameRounds; i += 1) {
     const userAnswer = readlineSync.question(`Question: ${pairs[i].question}\nYour answer: `);
     if (userAnswer !== pairs[i].answer) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${pairs[i].answer}.\nLet's try again, ${userName}!`);
-      return null;
+      return;
     }
     console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
-  return null;
 };
