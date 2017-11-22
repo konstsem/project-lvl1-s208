@@ -4,7 +4,7 @@ install:
 
 start:
 
-	npm run babel-node -- src/bin/brain-games.js
+	npm run babel-node -- src/bin/brain-even.js
 
 publish:
 
@@ -12,4 +12,4 @@ publish:
 
 lint:
 
-	npm run eslint src/bin/brain-games.js src/index.js
+	npm run eslint src/*
