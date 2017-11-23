@@ -10,7 +10,7 @@ const pairs = [];
 const consPairs = () => {
   for (let i = 0; i !== gameRounds; i += 1) {
     const result = {};
-    result.question = Math.floor(Math.random() * 100);
+    result.question = Math.floor((Math.random() * 99) - 1);
     result.answer = (result.question % 2 === 0) ? 'yes' : 'no';
     pairs.push(result);
   }
