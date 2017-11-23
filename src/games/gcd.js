@@ -1,36 +1,16 @@
-import { welcome, consPairs, main } from '..';
+import { getRandNum, getGcd, consPairs, main } from '..';
 
-const text = 'Find the greatest common divisor of given numbers.\n';
+const text = 'Find the greatest common divisor of given numbers.';
 
-const a = () => Math.floor((Math.random() * 49) + 1);
-const b = () => Math.floor((Math.random() * 49) + 1);
+const a = () => getRandNum(1, 50);
+const b = () => getRandNum(1, 50);
 
-const question = () => `${a()} ${b()}`;
+const getQuestion = () => `${a()} ${b()}`;
 
-const answer = (str) => {
-  const split = str.split(' ');
-  const x = +split[0];
-  const y = +split[1];
+const getAnswer = str => getGcd(str);
 
-  const func = (n, m) => {
-    if (m <= 0) {
-      return n;
-    }
-    if (n > m) {
-      return func(m, n - m);
-    }
-    return func(n, m - n);
-  };
-  const result = func(x, y);
-  return String(result);
-};
+const pairs = consPairs(getQuestion, getAnswer); // make pairs of questions and answers
 
-
-const pairs = consPairs(question, answer); // make pairs of questions and answers
-
-const game = () => {
-  welcome(text);
-  main(pairs);
-};
+const game = () => main(text, pairs);
 
 export default game;

@@ -1,39 +1,16 @@
-import { welcome, consPairs, main } from '..';
+import { getRandNum, operations, getResultOper, consPairs, main } from '..';
 
-const text = 'What is the result of the expression?\n';
+const text = 'What is the result of the expression?';
 
-const operations = ['+', '-', '*'];
-const actions =
-  {
-    '+': function plus(a, b) {
-      return a + b;
-    },
-    '-': function minus(a, b) {
-      return a - b;
-    },
-    '*': function mul(a, b) {
-      return a * b;
-    },
-  };
+const a = () => getRandNum(1, 50);
+const b = () => getRandNum(1, 10);
+const getNumOperation = () => operations[getRandNum(0, 3)];
 
-const a = () => Math.floor((Math.random() * 49) + 1);
-const b = () => Math.floor((Math.random() * 9) + 1);
-const r = () => Math.floor(Math.random() * 3);
+const getQuestion = () => `${a()} ${getNumOperation()} ${b()}`;
+const getAnswer = str => getResultOper(str);
 
-const question = () => `${a()} ${operations[r()]} ${b()}`;
-const answer = (str) => {
-  const split = str.split(' ');
-  const x = +split[0];
-  const op = split[1];
-  const y = +split[2];
-  return String(actions[op](x, y));
-};
+const pairs = consPairs(getQuestion, getAnswer); // make pairs of questions and answers
 
-const pairs = consPairs(question, answer); // make pairs of questions and answers
-
-const game = () => {
-  welcome(text);
-  main(pairs);
-};
+const game = () => main(text, pairs);
 
 export default game;

@@ -1,18 +1,15 @@
-import { welcome, consPairs, main } from '..';
+import { getRandNum, consPairs, main } from '..';
 
-const text = 'Answer "yes" if number even otherwise answer "no".\n';
+const text = 'Answer "yes" if number even otherwise answer "no".';
 
-const question = () => Math.floor((Math.random() * 99) - 1);
-const answer = (x) => {
+const getQuestion = () => getRandNum(1, 100);
+const getAnswer = (x) => {
   if (x % 2 === 0) return 'yes';
   return 'no';
 };
 
-const pairs = consPairs(question, answer); // make pairs of questions and answers
+const pairs = consPairs(getQuestion, getAnswer); // make pairs of questions and answers
 
-const game = () => {
-  welcome(text);
-  main(pairs);
-};
+const game = () => main(text, pairs);
 
 export default game;
