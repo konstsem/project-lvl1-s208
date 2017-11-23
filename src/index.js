@@ -11,6 +11,18 @@ export const welcome = (text) => {
   console.log(`Hello, ${userName}!\n`);
 };
 
+// constructor for pairs
+export const consPairs = (question, answer) => {
+  const array = [];
+  for (let i = 0; i !== gameRounds; i += 1) {
+    const result = {};
+    result.question = question();
+    result.answer = answer(result.question);
+    array.push(result);
+  }
+  return array;
+};
+
 export const main = (pairs) => {
   for (let i = 0; i !== gameRounds; i += 1) {
     const userAnswer = readlineSync.question(`Question: ${pairs[i].question}\nYour answer: `);
