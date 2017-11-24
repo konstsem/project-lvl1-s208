@@ -1,7 +1,5 @@
 import { main } from '..';
-import getRandNum from '../lib/helpers';
-import getGcd from '../lib/gcd';
-
+import { getRandNum, getGcd } from '../helpers';
 
 const text = 'Find the greatest common divisor of given numbers.';
 

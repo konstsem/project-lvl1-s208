@@ -1,6 +1,5 @@
 import { main } from '..';
-import getRandNum from '../lib/helpers';
-import getBalNum from '../lib/balance';
+import { getRandNum, getBalNum } from '../helpers';
 
 const text = 'Balance the given number.';
 

@@ -1,6 +1,5 @@
 import { main } from '..';
-import getRandNum from '../lib/helpers';
-import { operations, getResultOper } from '../lib/calc';
+import { getRandNum, operations, getResultOper } from '../helpers';
 
 const text = 'What is the result of the expression?';
 

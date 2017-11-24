@@ -1,5 +1,5 @@
 import { main } from '..';
-import getRandNum from '../lib/helpers';
+import { getRandNum } from '../helpers';
 
 const text = 'Answer "yes" if number even otherwise answer "no".';
 
