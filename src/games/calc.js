@@ -1,4 +1,6 @@
-import { getRandNum, operations, getResultOper, consPairs, main } from '..';
+import { main } from '..';
+import getRandNum from '../lib/helpers';
+import { operations, getResultOper } from '../lib/calc';
 
 const text = 'What is the result of the expression?';
 
@@ -9,8 +11,6 @@ const getNumOperation = () => operations[getRandNum(0, 3)];
 const getQuestion = () => `${a()} ${getNumOperation()} ${b()}`;
 const getAnswer = str => getResultOper(str);
 
-const pairs = consPairs(getQuestion, getAnswer); // make pairs of questions and answers
-
-const game = () => main(text, pairs);
+const game = () => main(text, getQuestion, getAnswer);
 
 export default game;

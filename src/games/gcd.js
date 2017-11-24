@@ -1,4 +1,7 @@
-import { getRandNum, getGcd, consPairs, main } from '..';
+import { main } from '..';
+import getRandNum from '../lib/helpers';
+import getGcd from '../lib/gcd';
+
 
 const text = 'Find the greatest common divisor of given numbers.';
 
@@ -9,8 +12,6 @@ const getQuestion = () => `${a()} ${b()}`;
 
 const getAnswer = str => getGcd(str);
 
-const pairs = consPairs(getQuestion, getAnswer); // make pairs of questions and answers
-
-const game = () => main(text, pairs);
+const game = () => main(text, getQuestion, getAnswer);
 
 export default game;

@@ -1,4 +1,5 @@
-import { getRandNum, consPairs, main } from '..';
+import { main } from '..';
+import getRandNum from '../lib/helpers';
 
 const text = 'Answer "yes" if number even otherwise answer "no".';
 
@@ -8,8 +9,6 @@ const getAnswer = (x) => {
   return 'no';
 };
 
-const pairs = consPairs(getQuestion, getAnswer); // make pairs of questions and answers
-
-const game = () => main(text, pairs);
+const game = () => main(text, getQuestion, getAnswer);
 
 export default game;
