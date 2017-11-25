@@ -1,11 +1,12 @@
 // function for getting random numbers
 export const getRandNum = (min, max) => Math.floor((Math.random() * (max - min)) + min);
-// function for getting gcd
-export const getGcd = (str) => {
-  const splitStr = str.split(' ');
-  const x = +splitStr[0];
-  const y = +splitStr[1];
 
+export const strToNum = (str, x) => {
+  const splitStr = str.split(' ');
+  return +splitStr[x];
+};
+// function for getting gcd
+export const getGcd = (x, y) => {
   const gcd = (n, m) => {
     if (m <= 0) {
       return n;
