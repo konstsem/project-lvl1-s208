@@ -1,6 +1,18 @@
 // function for getting random numbers
 export const getRandNum = (min, max) => Math.floor((Math.random() * (max - min)) + min);
 
+export const isPrime = (number) => {
+  const divisor = number - 1;
+  const func = (num, div) => {
+    if (div === 1) {
+      return 'yes';
+    } if (num % div) {
+      return func(num, div - 1);
+    } return 'no';
+  };
+  return func(number, divisor);
+};
+
 export const strToNum = (str, x) => {
   const splitStr = str.split(' ');
   return +splitStr[x];
