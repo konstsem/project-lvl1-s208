@@ -1,5 +1,3 @@
-import { cons } from 'hexlet-pairs';
-
 // function for getting random numbers
 export const getRandNum = (min, max) => Math.floor((Math.random() * (max - min)) + min);
 // function for getting gcd
@@ -75,4 +73,28 @@ export const getBalNum = (number) => {
   return result;
 };
 
-export const getPair = (getQuestion, getAsnwer) => cons(getQuestion, getAsnwer);
+export const getProgression = () => {
+  let result = '';
+  let begin = getRandNum(1, 9);
+  const step = getRandNum(2, 4);
+  const missing = getRandNum(1, 9);
+  for (let i = 0; i < 9; i += 1) {
+    if (i === missing) {
+      result += ' ..';
+      begin += step;
+    } result += ` ${begin}`;
+    begin += step;
+  }
+  return result;
+};
+
+export const getProgAnswer = (str) => {
+  let result = 0;
+  const numbers = str.split(' ');
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] === '..') {
+      result = (Math.abs(numbers[i + 1]) + Math.abs(numbers[i - 1])) / 2;
+    }
+  }
+  return String(result);
+};

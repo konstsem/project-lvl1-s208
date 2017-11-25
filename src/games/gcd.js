@@ -1,3 +1,4 @@
+import { cons } from 'hexlet-pairs';
 import { main } from '..';
 import { getRandNum, getGcd } from '../helpers';
 
@@ -10,6 +11,8 @@ const getQuestion = () => `${a()} ${b()}`;
 
 const getAnswer = str => getGcd(str);
 
-const game = () => main(text, getQuestion, getAnswer);
+const pair = cons(getQuestion, getAnswer);
+
+const game = () => main(text, pair);
 
 export default game;
