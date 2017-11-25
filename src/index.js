@@ -1,3 +1,4 @@
+// import { car, cdr } from 'hexlet-pairs';
 import readlineSync from 'readline-sync';
 
 export const gameRounds = 3;
@@ -17,10 +18,12 @@ export const main = (text, getQuestion, getAnswer) => {
 
   for (let i = 0; i !== gameRounds; i += 1) {
     const question = getQuestion();
-    const answer = getAnswer(question);
+    const trueAnswer = getAnswer(question);
+    // const question = car(getPair())();
+    // const trueAnswer = cdr(getPair())(question);
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
-    if (userAnswer !== answer) {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.\nLet's try again, ${userName}!`);
+    if (userAnswer !== trueAnswer) {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${trueAnswer}.\nLet's try again, ${userName}!`);
       return;
     }
     console.log('Correct!');

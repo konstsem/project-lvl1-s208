@@ -1,3 +1,5 @@
+import { cons } from 'hexlet-pairs';
+
 // function for getting random numbers
 export const getRandNum = (min, max) => Math.floor((Math.random() * (max - min)) + min);
 // function for getting gcd
@@ -72,3 +74,5 @@ export const getBalNum = (number) => {
   }
   return result;
 };
+
+export const getPair = (getQuestion, getAsnwer) => cons(getQuestion, getAsnwer);
