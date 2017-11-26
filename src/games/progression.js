@@ -7,8 +7,11 @@ const text = 'What number is missing in this progression?';
 const getQuestion = () => getProgression();
 const getAnswer = str => getProgAnswer(str);
 
-const pair = cons(getQuestion, getAnswer);
-
-const game = () => main(text, pair);
+const getQuestionAndAnswer = () => {
+  const question = getQuestion();
+  const trueAnswer = getAnswer(question);
+  return cons(question, trueAnswer);
+};
+const game = () => main(text, getQuestionAndAnswer);
 
 export default game;

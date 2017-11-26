@@ -10,17 +10,16 @@ export const welcome = (text) => {
   console.log(`Hello, ${userName}!\n`);
 };
 
-export const main = (text, pair) => {
+export const main = (text, getQuestionAndAnswer) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${text}\n`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
   for (let i = 0; i !== gameRounds; i += 1) {
-    // const question = getQuestion();
-    // const trueAnswer = getAnswer(question);
-    const question = car(pair)();
-    const trueAnswer = cdr(pair)(question);
+    const questionAndAnswer = getQuestionAndAnswer();
+    const question = car(questionAndAnswer);
+    const trueAnswer = cdr(questionAndAnswer);
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
     if (userAnswer !== trueAnswer) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${trueAnswer}.\nLet's try again, ${userName}!`);

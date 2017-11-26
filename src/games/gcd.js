@@ -11,8 +11,11 @@ const getQuestion = () => `${a()} ${b()}`;
 
 const getAnswer = str => getGcd(strToNum(str, 0), strToNum(str, 1));
 
-const pair = cons(getQuestion, getAnswer);
-
-const game = () => main(text, pair);
+const getQuestionAndAnswer = () => {
+  const question = getQuestion();
+  const trueAnswer = getAnswer(question);
+  return cons(question, trueAnswer);
+};
+const game = () => main(text, getQuestionAndAnswer);
 
 export default game;

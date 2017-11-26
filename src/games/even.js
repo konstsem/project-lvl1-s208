@@ -9,8 +9,12 @@ const getAnswer = (x) => {
   if (x % 2 === 0) return 'yes';
   return 'no';
 };
-const pair = cons(getQuestion, getAnswer);
 
-const game = () => main(text, pair);
+const getQuestionAndAnswer = () => {
+  const question = getQuestion();
+  const trueAnswer = getAnswer(question);
+  return cons(question, trueAnswer);
+};
+const game = () => main(text, getQuestionAndAnswer);
 
 export default game;
