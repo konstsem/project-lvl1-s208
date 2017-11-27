@@ -4,15 +4,9 @@ import { getRandNum, getBalNum } from '../helpers';
 
 const text = 'Balance the given number.';
 
-const a = () => getRandNum(1, 9999);
-
-const getQuestion = () => a();
-
-const getAnswer = number => getBalNum(number);
-
 const getQuestionAndAnswer = () => {
-  const question = getQuestion();
-  const trueAnswer = getAnswer(question);
+  const question = getRandNum(1, 9999);
+  const trueAnswer = getBalNum(question);
   return cons(question, trueAnswer);
 };
 const game = () => main(text, getQuestionAndAnswer);

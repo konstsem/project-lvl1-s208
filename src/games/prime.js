@@ -4,15 +4,9 @@ import { getRandNum, isPrime } from '../helpers';
 
 const text = 'Answer "yes" if number prime otherwise answer "no".';
 
-const getQuestion = () => getRandNum(1, 50);
-const getAnswer = (x) => {
-  if (isPrime(x)) return 'yes';
-  return 'no';
-};
-
 const getQuestionAndAnswer = () => {
-  const question = getQuestion();
-  const trueAnswer = getAnswer(question);
+  const question = getRandNum(1, 50);
+  const trueAnswer = (isPrime(question)) ? 'yes' : 'no';
   return cons(question, trueAnswer);
 };
 const game = () => main(text, getQuestionAndAnswer);

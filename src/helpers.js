@@ -13,10 +13,6 @@ export const isPrime = (number) => {
   return func(number, divisor);
 };
 
-export const strToNum = (str, x) => {
-  const splitStr = str.split(' ');
-  return +splitStr[x];
-};
 // function for getting gcd
 export const getGcd = (x, y) => {
   const gcd = (n, m) => {
@@ -86,28 +82,15 @@ export const getBalNum = (number) => {
   return result;
 };
 
-export const getProgression = () => {
+export const getProgression = (begin, step, missing, length) => {
+  let item = begin;
   let result = '';
-  let begin = getRandNum(1, 9);
-  const step = getRandNum(2, 4);
-  const missing = getRandNum(1, 9);
-  for (let i = 0; i < 9; i += 1) {
-    if (i === missing) {
+  for (let i = 1; i < length; i += 1) {
+    if (item === begin + (step * missing)) {
       result += ' ..';
-      begin += step;
-    } result += ` ${begin}`;
-    begin += step;
+      item += step;
+    } result += ` ${item}`;
+    item += step;
   }
   return result;
-};
-
-export const getProgAnswer = (str) => {
-  let result = 0;
-  const numbers = str.split(' ');
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (numbers[i] === '..') {
-      result = (Math.abs(numbers[i + 1]) + Math.abs(numbers[i - 1])) / 2;
-    }
-  }
-  return String(result);
 };
