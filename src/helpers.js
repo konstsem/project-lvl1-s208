@@ -29,12 +29,7 @@ export const getGcd = (x, y) => {
 };
 // functions for calculator
 export const operations = ['+', '-', '*'];
-export const getResultOper = (str) => {
-  const splitStr = str.split(' ');
-  const a = +splitStr[0];
-  const b = +splitStr[2];
-  const operation = splitStr[1];
-
+export const getResultOper = (a, b, operation) => {
   let result = 0;
   switch (operation) {
     case '+':
