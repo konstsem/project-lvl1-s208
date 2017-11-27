@@ -5,10 +5,10 @@ export const isPrime = (number) => {
   const divisor = number - 1;
   const func = (num, div) => {
     if (div === 1) {
-      return 'yes';
+      return true;
     } if (num % div) {
       return func(num, div - 1);
-    } return 'no';
+    } return false;
   };
   return func(number, divisor);
 };
